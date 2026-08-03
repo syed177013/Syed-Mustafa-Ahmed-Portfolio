@@ -1,2 +1,10 @@
 # Syed-Mustafa-Ahmed-Portfolio
-This portfolio showcases my projects, experiments, and solutions across AI, data science, and application development.
+A showcase of my work in **Artificial Intelligence, Machine Learning, Computer Vision, and Software Development**.
+
+🌐 **View Live Portfolio:**  
+https://your-vercel-url.vercel.app
+
+---
+
+
+
