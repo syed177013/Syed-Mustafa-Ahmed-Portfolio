@@ -1,0 +1,109 @@
+[
+  {
+    "name": "Microsoft Generative AI & Copilot",
+    "issuer": "Microsoft",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "",
+    "skills": [
+      "Generative AI",
+      "Microsoft Copilot",
+      "AI Productivity"
+    ]
+  },
+  {
+    "name": "PCAP: Python Programming Essentials",
+    "issuer": "Python Institute",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "",
+    "skills": [
+      "Python",
+      "Object-Oriented Programming",
+      "Programming Fundamentals"
+    ]
+  },
+  {
+    "name": "CCNA v7 Enterprise Networking, Security and Automation",
+    "issuer": "Cisco",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "",
+    "skills": [
+      "Networking",
+      "Enterprise Networks",
+      "Network Security",
+      "Automation"
+    ]
+  },
+  {
+    "name": "Microsoft Fabric Fundamentals",
+    "issuer": "Microsoft",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "",
+    "skills": [
+      "Microsoft Fabric",
+      "Data Analytics",
+      "Data Engineering"
+    ]
+  },
+  {
+    "name": "IBM Cloud Computing Fundamentals",
+    "issuer": "IBM",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "",
+    "skills": [
+      "Cloud Computing",
+      "Cloud Services",
+      "Virtualization"
+    ]
+  },
+  {
+    "name": "Celonis Process Mining Fundamentals",
+    "issuer": "Celonis",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "",
+    "skills": [
+      "Process Mining",
+      "Business Process Analysis",
+      "Business Intelligence"
+    ]
+  },
+        {
+    "name": "Business Analytics Internship",
+    "issuer": "SmartInternz × Qlik Sense",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "",
+    "skills": [
+        "Business Analytics",
+        "Qlik Sense",
+        "Data Visualization",
+        "Data Analysis"
+    ]
+  },
+        {
+    "name": "Automated Software Testing Internship",
+    "issuer": "SmartInternz × Katalon Academy",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "",
+    "skills": [
+        "Software Testing",
+        "Automation Testing",
+        "Katalon",
+        "Quality Assurance"
+    ]
+    } 
+]

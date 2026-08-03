@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Graduated with Distinction",
+    "description": "Completed Bachelor of Engineering in Artificial Intelligence & Data Science with a CGPA of 8.77/10, earning First Division with Distinction.",
+    "date": "2025",
+    "icon": "graduation-cap"
+  },
+  {
+    "title": "Best Employee Award",
+    "description": "Recognized as Best Employee at Tech Mahindra for resolving hundreds of enterprise IT incidents while maintaining a 97% customer satisfaction score.",
+    "date": "2025",
+    "icon": "award"
+  },
+  {
+    "title": "Technical Community Leadership",
+    "description": "Led the App Development Team at Google Developers Groups on Campus (GDGC) Methodist and delivered two technical seminars reaching approximately 400 students.",
+    "date": "2024",
+    "icon": "users"
+  },
+  {
+    "title": "IELTS Academic C1",
+    "description": "Achieved CEFR C1 English Proficiency through the IELTS Academic examination.",
+    "date": "",
+    "icon": "language"
+  },
+  {
+    "title": "Industry Certifications",
+    "description": "Earned certifications from Microsoft, Cisco, IBM, Celonis, and PCAP, strengthening expertise in AI, networking, cloud computing, and software development.",
+    "date": "",
+    "icon": "certificate"
+  },
+  {
+    "title": "Applied AI & Software Projects",
+    "description": "Designed and developed multiple AI, machine learning, automation, analytics, and software engineering projects demonstrating practical problem-solving skills.",
+    "date": "2023–2025",
+    "icon": "code"
+  }
+]

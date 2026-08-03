@@ -1,0 +1,116 @@
+[
+  {
+    "id": "techmahindra-tsa",
+    "company": "Tech Mahindra Ltd.",
+    "logo": "",
+    "role": "Technical Support Associate",
+    "employmentType": "Full-time",
+    "location": "Hyderabad, India",
+    "start": "Jun 2025",
+    "end": "Feb 2026",
+    "currentlyWorking": false,
+    "description": "Provided enterprise IT support for managed endpoints, resolving operating system, networking, software, and access management issues while maintaining high customer satisfaction and SLA compliance.",
+    "responsibilities": [
+      "Managed enterprise endpoints using Microsoft Intune.",
+      "Diagnosed and resolved operating system, networking, software, and access management issues.",
+      "Provided remote support using SSH, RDP, and Apache Guacamole.",
+      "Handled incident management and escalations through BMC Helix.",
+      "Collaborated with internal teams to improve service quality and response efficiency."
+    ],
+    "technologies": [
+      "Microsoft Intune",
+      "BMC Helix",
+      "Apache Guacamole",
+      "SSH",
+      "RDP",
+      "Windows",
+      "Linux"
+    ],
+    "achievements": [
+      "Maintained a 97% customer satisfaction score.",
+      "Recognized as Best Employee.",
+      "Resolved hundreds of enterprise IT incidents."
+    ]
+  },
+  {
+    "id": "gdgc-app-lead",
+    "company": "Google Developers Groups on Campus (GDGC) Methodist",
+    "logo": "",
+    "role": "App Development Team Lead",
+    "employmentType": "Leadership",
+    "location": "Hyderabad, India",
+    "start": "Sep 2024",
+    "end": "Apr 2025",
+    "currentlyWorking": false,
+    "description": "Led the App Development team, mentoring students, coordinating technical workshops, and organizing hands-on Android development initiatives.",
+    "responsibilities": [
+      "Led a team of four student developers.",
+      "Mentored members in Android application development.",
+      "Organized workshops and technical learning sessions.",
+      "Coordinated project activities and development tasks."
+    ],
+    "technologies": [
+      "Android",
+      "Java",
+      "Kotlin",
+      "Firebase",
+      "Git"
+    ],
+    "achievements": [
+      "Delivered two technical seminars.",
+      "Reached a combined audience of approximately 400 students."
+    ]
+  },
+  {
+    "id": "smartinternz-business-analytics",
+    "company": "SmartInternz",
+    "logo": "",
+    "role": "Business Analytics Intern",
+    "employmentType": "Internship",
+    "location": "Remote",
+    "start": "Mar 2024",
+    "end": "May 2024",
+    "currentlyWorking": false,
+    "description": "Analyzed airline industry datasets and developed interactive dashboards to support business decision-making through data-driven insights.",
+    "responsibilities": [
+      "Analyzed airline datasets to identify operational trends.",
+      "Created dashboards using Qlik Sense.",
+      "Presented analytical findings through interactive visualizations."
+    ],
+    "technologies": [
+      "Qlik Sense",
+      "Data Analysis",
+      "Data Visualization",
+      "Excel"
+    ],
+    "achievements": [
+      "Built interactive dashboards for business reporting."
+    ]
+  },
+  {
+    "id": "smartinternz-katalon",
+    "company": "SmartInternz",
+    "logo": "",
+    "role": "Automated Software Testing Intern",
+    "employmentType": "Internship",
+    "location": "Remote",
+    "start": "Dec 2023",
+    "end": "Feb 2024",
+    "currentlyWorking": false,
+    "description": "Performed automated and functional testing of web applications while contributing to quality assurance and software reliability improvements.",
+    "responsibilities": [
+      "Executed functional and automated test cases.",
+      "Reported defects and verified issue resolutions.",
+      "Assisted in improving testing workflows."
+    ],
+    "technologies": [
+      "Selenium",
+      "Katalon",
+      "Software Testing",
+      "Quality Assurance"
+    ],
+    "achievements": [
+      "Improved application testing efficiency through structured QA practices."
+    ]
+  }
+]

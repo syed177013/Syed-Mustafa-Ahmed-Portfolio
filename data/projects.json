@@ -1,0 +1,593 @@
+[
+  {
+    "id": "fasecure",
+    "name": "FASECURE",
+    "slug": "fasecure-face-anti-spoofing",
+    "featured": true,
+    "status": "Completed",
+    "year": "2025",
+    "category": "AI & Computer Vision",
+
+    "thumbnail": "assets/projects/fasecure/live_vs_phone.png",
+    "heroImage": "",
+
+    "github": "https://github.com/syed177013/FASECURE-Face-Anti-Spoofing",
+    "liveDemo": "",
+    "video": "",
+
+    "title": "FASECURE — Face Anti-Spoofing using CDCN++",
+    "tagline": "A deep learning-based face anti-spoofing system capable of detecting print and replay attacks in real time.",
+
+    "shortDescription": "Developed a real-time face anti-spoofing system using an enhanced CDCN++ architecture to distinguish genuine users from print and replay attacks through webcam inference.",
+
+    "overview": "FASECURE is a deep learning-powered face anti-spoofing system developed to improve the security of facial authentication systems. The project implements an enhanced CDCN++ architecture integrated with Multi-Attentional Feature Maps (MAFM), Spoof Cue Map Generation, and Feature Fusion to identify spoofing attempts such as printed photographs and replay attacks. The trained model is deployed through a real-time webcam inference pipeline using OpenCV and PyTorch.",
+
+    "problem": "Traditional face recognition systems can often be deceived using printed photographs or digital screen replays. Such presentation attacks compromise biometric authentication and create significant security risks in real-world applications.",
+
+    "solution": "Designed and trained an enhanced CDCN++ model capable of learning spoof-specific texture patterns using Central Difference Convolution. The system combines attention mechanisms and feature fusion to improve representation learning and performs real-time inference using a webcam, accurately classifying faces as Live or Spoof.",
+
+    "architecture": "Input Face → Face Detection (OpenCV SSD) → Image Preprocessing → Enhanced CDCN++ → Central Difference Convolution Layers → Multi-Attentional Feature Map (MAFM) → Spoof Cue Map Generation → Feature Fusion Module → Global Average Pooling → Binary Classification (Live / Spoof)",
+
+    "workflow": "Capture webcam frame → Detect face using OpenCV SSD → Crop detected face → Resize and normalize image → Run inference through the trained CDCN++ model → Apply sigmoid activation → Display Live or Spoof prediction with confidence score on the video feed.",
+
+    "tech": [
+      "Python",
+      "PyTorch",
+      "OpenCV",
+      "Torchvision",
+      "NumPy",
+      "Deep Learning",
+      "Computer Vision",
+      "CDCN++",
+      "MAFM",
+      "Git",
+      "GitHub"
+    ],
+
+    "features": [
+      "Real-time webcam inference",
+      "Face detection using OpenCV SSD",
+      "Enhanced CDCN++ implementation",
+      "Central Difference Convolution feature extraction",
+      "Multi-Attentional Feature Maps (MAFM)",
+      "Spoof Cue Map Generation",
+      "Feature Fusion Module",
+      "Binary Live/Spoof classification",
+      "Confidence score visualization",
+      "Modular and reusable architecture"
+    ],
+
+    "highlights": [
+      "Implemented an enhanced CDCN++ architecture for face anti-spoofing.",
+      "Integrated Multi-Attentional Feature Maps to improve feature representation.",
+      "Designed a modular PyTorch implementation for training and inference.",
+      "Built a real-time webcam inference pipeline using OpenCV.",
+      "Organized the project with separate model, utility, resource, and inference modules for maintainability."
+    ],
+
+    "challenges": [
+      "Implementing research concepts from the CDCN++ architecture into a practical application.",
+      "Maintaining real-time inference performance while preserving detection accuracy.",
+      "Handling face detection reliability under varying lighting conditions.",
+      "Managing model compatibility across different PyTorch and OpenCV versions."
+    ],
+
+    "lessonsLearned": [
+      "Research papers often require practical adaptations before production implementation.",
+      "Modular project organization significantly improves maintainability and deployment.",
+      "Computer vision models rely heavily on preprocessing consistency.",
+      "Model optimization and inference pipelines are equally important as model training."
+    ],
+
+    "futureImprovements": [
+      "Extend support for mask and 3D presentation attacks.",
+      "Train using larger public face anti-spoofing datasets.",
+      "Deploy as a web application using FastAPI or Flask.",
+      "Optimize inference for edge devices.",
+      "Add liveness visualization through spoof heatmaps.",
+      "Support ONNX and TensorRT deployment."
+    ],
+
+    "metrics": [
+      {
+        "label": "Task",
+        "value": "Face Anti-Spoofing"
+      },
+      {
+        "label": "Framework",
+        "value": "PyTorch"
+      },
+      {
+        "label": "Inference",
+        "value": "Real-Time Webcam"
+      },
+      {
+        "label": "Attack Types",
+        "value": "Print & Replay"
+      }
+    ],
+
+    "screenshots": [],
+
+    "gallery": []
+  },
+
+    {
+    "id": "biolocky",
+    "name": "BioLocky",
+    "slug": "biolocky-biometric-file-protection",
+    "featured": true,
+    "status": "Completed",
+    "year": "2025",
+    "category": "Artificial Intelligence",
+
+    "thumbnail": "assets/projects/biolocky/biolocky-interface.png",
+    "heroImage": "",
+
+    "github": "https://github.com/syed177013/BioLocky-A-Biometric-based-File-Lock.git",
+    "liveDemo": "",
+    "video": "",
+
+    "title": "BioLocky — AI-Based Biometric File Protection System",
+
+    "tagline": "Cross-platform biometric file protection using facial and voice authentication.",
+
+    "shortDescription": "Developed a desktop biometric security application that protects encrypted files using multimodal facial and voice authentication.",
+
+    "overview": "BioLocky is a desktop application that combines facial recognition and voice authentication to provide secure biometric access to encrypted files. The application uses AES encryption for file protection and offers a modern interface built with CustomTkinter supporting both Windows and Linux.",
+
+    "problem": "Traditional password-protected file storage relies on credentials that can be forgotten, shared, or compromised.",
+
+    "solution": "Implemented multimodal biometric authentication combining facial and voice verification before allowing access to AES-encrypted files.",
+
+    "architecture": "User → Face Authentication → Voice Authentication → Feature Fusion → Authentication Decision → AES Encryption/Decryption → File Access",
+
+    "workflow": "User launches application → Face authentication → Voice verification → Authentication validation → File encryption/decryption → Secure file access.",
+
+    "tech": [
+      "Python",
+      "OpenCV",
+      "CustomTkinter",
+      "PyAudio",
+      "AES Encryption",
+      "Machine Learning",
+      "Computer Vision",
+      "Voice Recognition"
+    ],
+
+    "features": [
+      "Facial authentication",
+      "Voice authentication",
+      "Multimodal biometric verification",
+      "AES file encryption",
+      "Cross-platform support",
+      "Modern desktop interface",
+      "Light and dark themes"
+    ],
+
+    "highlights": [
+      "Implemented multimodal biometric authentication.",
+      "Integrated AES encryption for secure file storage.",
+      "Designed a responsive desktop interface using CustomTkinter.",
+      "Built for both Windows and Linux."
+    ],
+
+    "challenges": [
+      "Synchronizing multiple biometric authentication methods.",
+      "Maintaining usability while improving security.",
+      "Managing encrypted file operations across operating systems."
+    ],
+
+    "lessonsLearned": [
+      "Biometric authentication benefits from combining multiple modalities.",
+      "User experience is critical in security-focused software.",
+      "Cross-platform development requires careful dependency management."
+    ],
+
+    "futureImprovements": [
+      "Cloud synchronization",
+      "Fingerprint authentication",
+      "Face embedding optimization",
+      "Mobile companion application"
+    ],
+
+    "metrics": [
+      {
+        "label": "Authentication",
+        "value": "Face + Voice + Security PIN"
+      },
+      {
+        "label": "Encryption",
+        "value": "AES"
+      },
+      {
+        "label": "Platforms",
+        "value": "Windows, Mac & Linux"
+      },
+      {
+        "label": "Application",
+        "value": "Desktop"
+      }
+    ],
+
+    "screenshots": [],
+    "gallery": []
+  },
+
+    
+
+    {
+    "id": "eda-platform",
+    "name": "EDA Platform",
+    "slug": "exploratory-data-analysis-platform",
+    "featured": true,
+    "status": "Completed",
+    "year": "2024",
+    "category": "Data Science",
+
+    "thumbnail": "assets/projects/eda/EDA_result.png",
+    "heroImage": "",
+
+    "github": "https://github.com/syed177013/EDA-Automation-Platform.git",
+    "liveDemo": "",
+    "video": "",
+
+    "title": "Exploratory Data Analysis Automation Platform",
+
+    "tagline": "Automates dataset profiling, visualization and statistical analysis from uploaded CSV files.",
+
+    "shortDescription": "Built a Flask-powered web application that automatically generates statistical summaries, visualizations and insights from uploaded datasets.",
+
+    "overview": "The platform simplifies exploratory data analysis by allowing users to upload CSV datasets and automatically receive descriptive statistics, visualizations and insights without writing code.",
+
+    "problem": "Initial exploratory data analysis is repetitive and time-consuming for every dataset.",
+
+    "solution": "Developed a web application that automates profiling, visualization generation and statistical analysis.",
+
+    "architecture": "CSV Upload → Flask Backend → Data Processing → Statistical Analysis → Visualization Engine → Dashboard",
+
+    "workflow": "Upload dataset → Read CSV → Clean data → Generate statistics → Produce charts → Display downloadable report.",
+
+    "tech": [
+      "Python",
+      "Flask",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "HTML",
+      "CSS"
+    ],
+
+    "features": [
+      "CSV upload",
+      "Automated profiling",
+      "Descriptive statistics",
+      "Correlation analysis",
+      "Interactive visualizations",
+      "Automatic insight generation"
+    ],
+
+    "highlights": [
+      "Reduced manual EDA effort.",
+      "Automated statistical reporting.",
+      "Generated charts directly from uploaded datasets."
+    ],
+
+    "challenges": [
+      "Supporting datasets with inconsistent formatting.",
+      "Handling missing values automatically."
+    ],
+
+    "lessonsLearned": [
+      "Automation dramatically speeds up early-stage analytics.",
+      "Data cleaning is often the most important step."
+    ],
+
+    "futureImprovements": [
+      "Interactive dashboards",
+      "Machine learning recommendations",
+      "Cloud deployment"
+    ],
+
+    "metrics": [
+      {
+        "label": "Framework",
+        "value": "Flask"
+      },
+      {
+        "label": "Input",
+        "value": "CSV"
+      },
+      {
+        "label": "Output",
+        "value": "EDA Reports"
+      },
+      {
+        "label": "Domain",
+        "value": "Data Science"
+      }
+    ],
+
+    "screenshots": [],
+    "gallery": []
+  },
+
+    {
+    "id": "artscii",
+    "name": "Artscii",
+    "slug": "artscii-ascii-art-generator",
+    "featured": false,
+    "status": "Completed",
+    "year": "2023",
+    "category": "Image Processing",
+
+    "thumbnail": "assets/projects/ascii/ascii-art.png",
+    "heroImage": "",
+
+    "github": "https://github.com/syed177013/Artscii-a-simple-ascii-art-generator",
+    "liveDemo": "",
+    "video": "",
+
+    "title": "Artscii — ASCII Art Generator",
+    "tagline": "Convert images into expressive ASCII art with a lightweight desktop application.",
+
+    "shortDescription": "Built a Python-based application that converts images into ASCII art by mapping pixel brightness to printable character sets with adjustable output quality.",
+
+    "overview": "Artscii is a simple image processing application that transforms ordinary images into text-based ASCII artwork. The project demonstrates grayscale conversion, pixel intensity analysis, character mapping, and configurable rendering to generate visually recognizable ASCII representations.",
+
+    "problem": "Creating readable ASCII art manually is time-consuming and requires careful character placement. Automating the process requires efficient image preprocessing and brightness-to-character mapping.",
+
+    "solution": "Implemented an image-to-ASCII conversion pipeline that preprocesses images, converts them to grayscale, scales them while preserving aspect ratio, and maps pixel intensities to ordered ASCII characters to generate high-quality text art.",
+
+    "architecture": "Image Input → Resize → Grayscale Conversion → Pixel Intensity Analysis → Character Mapping → ASCII Rendering → Text Output",
+
+    "workflow": "Load image → Resize while preserving aspect ratio → Convert to grayscale → Map each pixel intensity to an ASCII character → Render and export the generated ASCII artwork.",
+
+    "tech": [
+      "Python",
+      "OpenCV",
+      "NumPy",
+      "Image Processing",
+      "ASCII Art",
+      "Git",
+      "GitHub"
+    ],
+
+    "features": [
+      "Image to ASCII conversion",
+      "Automatic grayscale preprocessing",
+      "Aspect ratio preservation",
+      "Brightness-based character mapping",
+      "Configurable output quality",
+      "Simple desktop interface"
+    ],
+
+    "highlights": [
+      "Designed an efficient pixel-to-character mapping algorithm.",
+      "Implemented image preprocessing for cleaner ASCII output.",
+      "Maintained image proportions during conversion.",
+      "Produced lightweight text-based artwork from ordinary images."
+    ],
+
+    "challenges": [
+      "Balancing detail and readability in ASCII output.",
+      "Preserving aspect ratio despite differing character dimensions.",
+      "Selecting character sets that produce visually pleasing results."
+    ],
+
+    "lessonsLearned": [
+      "Small image-processing techniques significantly impact visual quality.",
+      "Character selection is critical for realistic ASCII rendering.",
+      "Aspect ratio correction is essential when converting images to text."
+    ],
+
+    "futureImprovements": [
+      "Support colored ASCII output.",
+      "Allow custom character sets.",
+      "Export HTML and ANSI formats.",
+      "Batch image conversion.",
+      "Real-time webcam ASCII rendering."
+    ],
+
+    "metrics": [
+      {
+        "label": "Task",
+        "value": "Image → ASCII"
+      },
+      {
+        "label": "Language",
+        "value": "Python"
+      },
+      {
+        "label": "Processing",
+        "value": "Grayscale Mapping"
+      },
+      {
+        "label": "Output",
+        "value": "ASCII Text"
+      }
+    ],
+
+    "screenshots": [],
+    "gallery": []
+  },
+
+    {
+    "id": "budget-tracker",
+    "name": "Budget Tracker",
+    "slug": "android-budget-tracker",
+    "featured": false,
+    "status": "Completed",
+    "year": "2023",
+    "category": "Android Development",
+
+    "thumbnail": "assets/projects/budgetly/Budgetly.jpeg",
+    "heroImage": "",
+
+    "github": "",
+    "liveDemo": "",
+    "video": "",
+
+    "title": "Budget Tracker with Spending Analytics",
+
+    "tagline": "Android application for personal finance management and spending analytics.",
+
+    "shortDescription": "Developed a Kotlin Android application that helps users manage expenses and visualize spending patterns.",
+
+    "overview": "An Android application featuring local transaction storage, budgeting tools and visual spending analytics using SQLite.",
+
+    "problem": "Users often struggle to monitor personal spending and budget effectively.",
+
+    "solution": "Built a lightweight Android application with transaction management and spending visualization.",
+
+    "architecture": "Android UI → SQLite Database → Analytics Engine → Dashboard",
+
+    "workflow": "Add transaction → Store in SQLite → Categorize → Generate charts → Display spending trends.",
+
+    "tech": [
+      "Kotlin",
+      "Android",
+      "SQLite",
+      "Material Design"
+    ],
+
+    "features": [
+      "Expense tracking",
+      "Budget management",
+      "SQLite storage",
+      "Analytics dashboard",
+      "Category management"
+    ],
+
+    "highlights": [
+      "Built entirely in Kotlin.",
+      "Implemented local persistent storage.",
+      "Designed intuitive financial dashboards."
+    ],
+
+    "challenges": [
+      "Designing intuitive mobile interfaces.",
+      "Managing local database operations."
+    ],
+
+    "lessonsLearned": [
+      "SQLite remains a reliable offline solution.",
+      "User experience greatly affects application adoption."
+    ],
+
+    "futureImprovements": [
+      "Firebase sync",
+      "Expense prediction",
+      "Cloud backup"
+    ],
+
+    "metrics": [
+      {
+        "label": "Platform",
+        "value": "Android"
+      },
+      {
+        "label": "Language",
+        "value": "Kotlin"
+      },
+      {
+        "label": "Database",
+        "value": "SQLite"
+      }
+    ],
+
+    "screenshots": [],
+    "gallery": []
+  },
+
+    
+
+    {
+    "id": "desktop-clock",
+    "name": "Desktop Clock Widget",
+    "slug": "desktop-clock-widget",
+
+    "featured": false,
+    "status": "Completed",
+    "year": "2023",
+    "category": "Desktop Software",
+
+    "thumbnail": "assets/projects/pinkyclocky/Pinky-Clocky.png",
+    "heroImage": "",
+
+    "github": "https://github.com/syed177013/PinkyClocky7-A-Windows7-Pink-Clockface-Gadget-for-Newer-Windows.git",
+    "liveDemo": "",
+    "video": "",
+
+    "title": "Desktop Clock Widget for Multiple Operating Systems",
+
+    "tagline": "A lightweight customizable desktop widget inspired by Windows Vista Gadgets.",
+
+    "shortDescription": "Developed a cross-platform desktop clock widget with modern customization while recreating the nostalgic Windows Vista gadget experience.",
+
+    "overview": "The application recreates classic Windows Vista desktop gadgets using Python and CustomTkinter while remaining lightweight and highly customizable.",
+
+    "problem": "Modern operating systems no longer provide classic desktop gadgets for quick desktop information.",
+
+    "solution": "Created a customizable desktop widget consuming minimal memory while supporting multiple operating systems.",
+
+    "architecture": "Python → CustomTkinter → Widget Engine → Desktop Overlay",
+
+    "workflow": "Launch widget → Load settings → Render desktop widget → Live clock updates.",
+
+    "tech": [
+      "Python",
+      "CustomTkinter"
+    ],
+
+    "features": [
+      "Cross-platform",
+      "Lightweight",
+      "Desktop overlay",
+      "Theme customization",
+      "Minimal RAM usage"
+    ],
+
+    "highlights": [
+      "Consumes only around 1–4 MB RAM.",
+      "Supports Windows, Linux and macOS.",
+      "Recreates classic Vista Gadgets."
+    ],
+
+    "challenges": [
+      "Maintaining compatibility across desktop environments.",
+      "Optimizing resource consumption."
+    ],
+
+    "lessonsLearned": [
+      "Small utilities benefit greatly from optimization.",
+      "Cross-platform UI development requires careful abstraction."
+    ],
+
+    "futureImprovements": [
+      "Weather widget",
+      "Calendar integration",
+      "Plugin system"
+    ],
+
+    "metrics": [
+      {
+        "label": "Platforms",
+        "value": "Windows/Linux/macOS"
+      },
+      {
+        "label": "RAM Usage",
+        "value": "1–4 MB"
+      },
+      {
+        "label": "Framework",
+        "value": "CustomTkinter"
+      }
+    ],
+
+    "screenshots": [],
+    "gallery": []
+  }
+
+
+]

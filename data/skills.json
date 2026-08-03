@@ -1,0 +1,143 @@
+[
+  {
+    "category": "Programming",
+    "skills": [
+      {
+        "name": "Python",
+        "icon": "python"
+      },
+      {
+        "name": "Java",
+        "icon": "java"
+      },
+      {
+        "name": "C++",
+        "icon": "cplusplus"
+      },
+      {
+        "name": "SQL",
+        "icon": "mysql"
+      },
+      {
+        "name": "R",
+        "icon": "r"
+      }
+    ]
+  },
+  {
+    "category": "AI & Data Science",
+    "skills": [
+      {
+        "name": "Machine Learning",
+        "icon": "tensorflow"
+      },
+      {
+        "name": "Deep Learning",
+        "icon": "pytorch"
+      },
+      {
+        "name": "PyTorch",
+        "icon": "pytorch"
+      },
+      {
+        "name": "TensorFlow",
+        "icon": "tensorflow"
+      },
+      {
+        "name": "Data Analysis",
+        "icon": "pandas"
+      },
+      {
+        "name": "Exploratory Data Analysis",
+        "icon": "jupyter"
+      },
+      {
+        "name": "Feature Engineering",
+        "icon": "scikitlearn"
+      }
+    ]
+  },
+  {
+    "category": "Web & Software Development",
+    "skills": [
+      {
+        "name": "Flask",
+        "icon": "flask"
+      },
+      {
+        "name": "Android Development",
+        "icon": "android"
+      },
+      {
+        "name": "Firebase",
+        "icon": "firebase"
+      },
+      {
+        "name": "SQLite",
+        "icon": "sqlite"
+      },
+      {
+        "name": "REST APIs",
+        "icon": "fastapi"
+      }
+    ]
+  },
+  {
+    "category": "Tools & Platforms",
+    "skills": [
+      {
+        "name": "Linux",
+        "icon": "linux"
+      },
+      {
+        "name": "Git",
+        "icon": "git"
+      },
+      {
+        "name": "Microsoft Intune",
+        "icon": "microsoft"
+      },
+      {
+        "name": "BMC Helix",
+        "icon": "server"
+      },
+      {
+        "name": "Selenium",
+        "icon": "selenium"
+      },
+      {
+        "name": "Qlik Sense",
+        "icon": "chart"
+      },
+      {
+        "name": "Apache Guacamole",
+        "icon": "terminal"
+      }
+    ]
+  },
+  {
+    "category": "Core Concepts",
+    "skills": [
+      {
+        "name": "Object-Oriented Programming",
+        "icon": "code"
+      },
+      {
+        "name": "Data Structures",
+        "icon": "database"
+      },
+      {
+        "name": "Operating Systems",
+        "icon": "windows"
+      },
+      {
+        "name": "Networking",
+        "icon": "network"
+      },
+      {
+        "name": "Software Testing",
+        "icon": "bug"
+      }
+    ]
+  }
+]

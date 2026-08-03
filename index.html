@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed Mustafa Ahmed | AI & Data Science Engineer</title>
+<meta name="description" content="Portfolio of Syed Mustafa Ahmed showcasing AI, Machine Learning, Computer Vision, Python, Android Development, Data Science, and Software Engineering projects including FASECURE and other innovative solutions.">
+<meta name="keywords" content="Syed Mustafa Ahmed, AI Engineer, Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Python Developer, Data Scientist, Software Engineer, Android Developer, PyTorch, TensorFlow, Flask, OpenCV, Linux, Git, Portfolio, Hyderabad, India">
+<meta name="author" content="Syed Mustafa Ahmed">
+
+<!-- Set theme before first paint to avoid a flash of the wrong theme -->
+<script>
+  (function() {
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================== HEADER ============================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand" id="brand-initials">Syed <span class="brand-tag"></span></a>
+
+    <nav id="main-nav" class="main-nav">
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light and dark theme">
+        <i class="fas fa-sun theme-icon theme-icon--sun"></i>
+        <i class="fas fa-moon theme-icon theme-icon--moon"></i>
+      </button>
+
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================== HERO / ABSTRACT ============================== -->
+<section id="top" class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-copy">
+      <p class="eyebrow" id="hero-eyebrow"></p>
+      <h1 class="hero-name" id="hero-name">&nbsp;</h1>
+      <p class="hero-subhead" id="hero-title">&nbsp;</p>
+      <p class="hero-tagline" id="hero-tagline"></p>
+      <p class="hero-abstract" id="hero-bio"></p>
+
+      <div class="status-row">
+        <span class="status-badge" id="availability-badge"><i class="status-dot"></i> <span id="availability-text">Loading…</span></span>
+      </div>
+
+      <div class="focus-tags" id="learning-tags">
+        <!-- currently-learning.json rendered here -->
+      </div>
+
+      <div class="interests-row" id="interests-tags">
+        <!-- interests.json rendered here -->
+      </div>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+        <a href="#contact" class="btn-text" id="resume-link">[ get in touch ]</a>
+      </div>
+    </div>
+
+    <div class="hero-figure">
+      <svg viewBox="0 0 520 300" class="growth-svg" role="img" aria-label="Stylized chart of skill growth over time">
+        <line x1="50" y1="20" x2="50" y2="250" class="axis-line"></line>
+        <line x1="50" y1="250" x2="490" y2="250" class="axis-line"></line>
+        <polygon points="46,22 54,22 50,10" class="axis-arrow"></polygon>
+        <polygon points="488,246 488,254 500,250" class="axis-arrow"></polygon>
+
+        <path id="curve-path" class="curve-path"
+          d="M50,235 C 100,232 120,220 140,210 C 165,197 175,190 200,175
+             C 225,160 235,168 255,150 C 275,132 285,120 310,108
+             C 335,96 345,105 365,88 C 385,71 400,60 425,45
+             C 445,33 460,30 480,20" />
+
+        <circle cx="140" cy="210" r="5" class="curve-dot"></circle>
+        <circle cx="255" cy="150" r="5" class="curve-dot"></circle>
+        <circle cx="365" cy="88" r="5" class="curve-dot"></circle>
+        <circle cx="480" cy="20" r="6" class="curve-dot curve-dot--now"></circle>
+      </svg>
+
+      <div class="fig-caption">
+        <span class="fig-label">Fig. 1 — Journey so far</span>
+        <span class="fig-note"></span>
+      </div>
+
+      <div class="fig-milestones" id="fig-milestones">
+        <!-- populated from timeline.json -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================== KEY METRICS ============================== -->
+<section class="spec-strip">
+  <div class="spec-inner" id="stats-strip">
+    <!-- populated from stats.json + computed counts -->
+  </div>
+</section>
+
+<main>
+
+<!-- ============================== SKILLS ============================== -->
+<section id="skills" class="section">
+  <div class="section-inner">
+    <p class="eyebrow"></p>
+    <h2 class="section-title">Technical Stack</h2>
+    <div class="skills-grid" id="skills-container"></div>
+  </div>
+</section>
+
+<!-- ============================== PROJECTS / EVALUATION RESULTS ============================== -->
+<section id="projects" class="section section--tint">
+  <div class="section-inner">
+    <p class="eyebrow"></p>
+    <h2 class="section-title">Selected projects</h2>
+    
+    <div class="projects-grid" id="projects-container"></div>
+  </div>
+</section>
+
+<!-- ============================== EXPERIENCE ============================== -->
+<section id="experience" class="section">
+  <div class="section-inner">
+    <p class="eyebrow"></p>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="log-list" id="experience-container"></div>
+  </div>
+</section>
+
+<!-- ============================== EDUCATION ============================== -->
+<section id="education" class="section section--tint">
+  <div class="section-inner">
+    <p class="eyebrow"></p>
+    <h2 class="section-title">Education</h2>
+    <div class="log-list" id="education-container"></div>
+  </div>
+</section>
+
+<!-- ============================== CERTIFICATIONS ============================== -->
+<section id="certifications" class="section">
+  <div class="section-inner">
+    <p class="eyebrow"></p>
+    <h2 class="section-title">Certifications</h2>
+    <div class="cert-grid" id="certifications-container"></div>
+  </div>
+</section>
+
+<!-- ============================== ACHIEVEMENTS ============================== -->
+<section id="achievements" class="section section--tint">
+  <div class="section-inner">
+    <p class="eyebrow"></p>
+    <h2 class="section-title">Achievements</h2>
+    <div class="achievements-grid" id="achievements-container"></div>
+  </div>
+</section>
+
+<!-- ============================== CHANGELOG / TIMELINE ============================== -->
+<section id="timeline" class="section">
+  <div class="section-inner">
+    <p class="eyebrow"></p>
+    <h2 class="section-title">Milestones</h2>
+    <div class="changelog" id="timeline-container"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================== CONTACT / CITE THIS ============================== -->
+<footer id="contact" class="footer">
+  <div class="section-inner footer-grid">
+
+    <div class="footer-left">
+      <p class="eyebrow"></p>
+      <h2 class="section-title">Let's build something.</h2>
+      <p class="footer-sub">Open to AI/ML internships, new‑grad roles, and interesting collaborations.</p>
+
+      
+
+      <div class="contact-details" id="contact-details"></div>
+      <div class="social-links" id="socials-container"></div>
+    </div>
+
+    <div class="footer-right">
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name or organization" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="name@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Brief details about your project or role..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-submit">
+          <span>Send message</span> <i class="fas fa-paper-plane"></i>
+        </button>
+        <p class="form-note">Opens your email app with this pre-filled — no data is sent anywhere else. REQUIRES "Allow mail.google.com to open all email links" permission allowed or Dedicated mail client pre-configured</p>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>&copy; <span id="current-year"></span> <span id="footer-name">Syed Mustafa Ahmed</span>. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

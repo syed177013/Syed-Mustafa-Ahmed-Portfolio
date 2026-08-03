@@ -1,0 +1,32 @@
+[
+  {
+    "id": "methodist-be-ai-ds",
+    "institution": "Methodist College of Engineering and Technology",
+    "degree": "Bachelor of Engineering",
+    "field": "Artificial Intelligence & Data Science",
+    "cgpa": "8.77 / 10",
+    "location": "Hyderabad, Telangana, India",
+    "start": "2021",
+    "end": "2025",
+    "description": "Completed a Bachelor's degree specializing in Artificial Intelligence and Data Science, with a strong foundation in machine learning, deep learning, software engineering, data analytics, and modern application development. Built multiple AI, automation, analytics, and Android development projects while actively participating in technical leadership and campus development initiatives.",
+    "courses": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Deep Learning",
+      "Data Science",
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming",
+      "Database Management Systems",
+      "Operating Systems",
+      "Computer Networks",
+      "Software Engineering"
+    ],
+    "achievements": [
+      "Graduated with First Division with Distinction.",
+      "Achieved a CGPA of 8.77 / 10.",
+      "Served as App Development Team Lead at GDGC Methodist.",
+      "Led technical workshops and seminars for approximately 400 students."
+    ],
+    "logo": ""
+  }
+]
