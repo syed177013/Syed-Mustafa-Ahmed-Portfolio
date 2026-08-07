@@ -1,15 +1,24 @@
 [
   {
-    "name": "Microsoft Generative AI & Copilot",
+    "name": "Fundamentals of Generative AI",
     "issuer": "Microsoft",
     "date": "",
     "credentialId": "",
     "credentialUrl": "",
-    "certificateImage": "",
+    "certificateImage": "assets/Certificate_assets/GenAIFund.png",
+    "skills": ""
+  },
+  {
+    "name": "Introduction to end-to-end Analytics using Microsoft Fabric",
+    "issuer": "Microsoft",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "assets/Certificate_assets/MSFabricAnal.png",
     "skills": [
-      "Generative AI",
-      "Microsoft Copilot",
-      "AI Productivity"
+      "Microsoft Fabric",
+      "Data Analytics",
+      "Data Engineering"
     ]
   },
   {
@@ -18,12 +27,8 @@
     "date": "",
     "credentialId": "",
     "credentialUrl": "",
-    "certificateImage": "",
-    "skills": [
-      "Python",
-      "Object-Oriented Programming",
-      "Programming Fundamentals"
-    ]
+    "certificateImage": "assets/Certificate_assets/PCAP.png",
+    "skills": ""
   },
   {
     "name": "CCNA v7 Enterprise Networking, Security and Automation",
@@ -31,7 +36,7 @@
     "date": "",
     "credentialId": "",
     "credentialUrl": "",
-    "certificateImage": "",
+    "certificateImage": "assets/Certificate_assets/RishiCCNA.png",
     "skills": [
       "Networking",
       "Enterprise Networks",
@@ -40,25 +45,26 @@
     ]
   },
   {
-    "name": "Microsoft Fabric Fundamentals",
-    "issuer": "Microsoft",
+    "name": "Statify Data Science Bootcamp",
+    "issuer": "IIT Bhubaneswar",
     "date": "",
     "credentialId": "",
     "credentialUrl": "",
-    "certificateImage": "",
+    "certificateImage": "assets/Certificate_assets/DSBootCamp_IIT.png",
     "skills": [
       "Microsoft Fabric",
       "Data Analytics",
       "Data Engineering"
     ]
   },
+
   {
-    "name": "IBM Cloud Computing Fundamentals",
-    "issuer": "IBM",
+    "name": "Cybersecurity Fundamentals",
+    "issuer": "IBM Skillsbuild",
     "date": "",
     "credentialId": "",
     "credentialUrl": "",
-    "certificateImage": "",
+    "certificateImage": "assets/Certificate_assets/IBMCyber.png",
     "skills": [
       "Cloud Computing",
       "Cloud Services",
@@ -71,7 +77,7 @@
     "date": "",
     "credentialId": "",
     "credentialUrl": "",
-    "certificateImage": "",
+    "certificateImage": "assets/Certificate_assets/CelonisProcessMine.png",
     "skills": [
       "Process Mining",
       "Business Process Analysis",
@@ -84,7 +90,7 @@
     "date": "",
     "credentialId": "",
     "credentialUrl": "",
-    "certificateImage": "",
+    "certificateImage": "assets/Certificate_assets/BAInternzCertificate.png",
     "skills": [
         "Business Analytics",
         "Qlik Sense",
@@ -98,7 +104,7 @@
     "date": "",
     "credentialId": "",
     "credentialUrl": "",
-    "certificateImage": "",
+    "certificateImage": "assets/Certificate_assets/Katalon.png",
     "skills": [
         "Software Testing",
         "Automation Testing",

@@ -258,13 +258,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // ------------------------------------------------------------------
   // Certifications
   // ------------------------------------------------------------------
-  function renderCertifications(certifications) {
+
+    function renderCertifications(certifications) {
     const container = document.getElementById('certifications-container');
+
     container.innerHTML = certifications.map(c => `
       <div class="cert-card reveal">
-        <div class="cert-name">${c.name}</div>
-        <div class="cert-issuer">${c.issuer}</div>
-        <div class="cert-skills">${(c.skills || []).map(s => `<span>${s}</span>`).join('')}</div>
+
+        ${c.certificateImage ? `
+        <div class="cert-image">
+        <a href="${c.certificateImage}" target="_blank">
+        <img src="${c.certificateImage}" alt="${c.name}">
+        </a>
+        </div>
+        ` : ''}
+
+        <div class="cert-content">
+
+          <div class="cert-name">${c.name}</div>
+
+          <div class="cert-issuer">
+            ${c.issuer}
+          </div>
+
+          
+
+        </div>
+
       </div>
     `).join('');
   }
