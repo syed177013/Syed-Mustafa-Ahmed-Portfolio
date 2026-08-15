@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('skills-container');
     container.innerHTML = skills.map(cat => `
       <div class="skill-card reveal">
-        <h3>// ${cat.category}</h3>
+        <h3> ${cat.category}</h3>
         <div class="pill-row">
           ${cat.skills.map(s => `<span class="pill">${s.name}</span>`).join('')}
         </div>
@@ -131,86 +131,428 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
+
   // ------------------------------------------------------------------
-  // Projects — brief cards (tagline, short description, tech, top metrics, link)
+  // Projects — brief cards (tagline, short description, tech, metrics, links)
   // ------------------------------------------------------------------
-  // ------------------------------------------------------------------
-// Projects — brief cards (tagline, short description, tech, metrics, links)
-// ------------------------------------------------------------------
-  function renderProjects(projects) {
-    const container = document.getElementById('projects-container');
+    // ------------------------------------------------------------------
+      // Projects — center-focused showcase carousel
+      // ------------------------------------------------------------------
+      function renderProjects(projects) {
+        const container = document.getElementById('projects-container');
 
-    container.innerHTML = projects.map((p) => {
+        if (!container || !projects || !projects.length) return;
 
-      const metricsHtml = (p.metrics && p.metrics.length)
-        ? `
-          <div class="results-table">
-            ${p.metrics.slice(0, 2).map(m => `
-              <div class="results-row">
-                <span class="r-label">${m.label}</span>
-                <span class="r-value">${m.value}</span>
-              </div>
-            `).join('')}
-          </div>
-        `
-        : '';
+        const stage = container.querySelector('.projects-stage');
+        const prevButton = container.querySelector('.projects-nav--prev');
+        const nextButton = container.querySelector('.projects-nav--next');
+        const counter = document.querySelector('.projects-counter');
 
-      const links = `
-        <div class="project-links">
-          ${p.github
-            ? `<a href="${p.github}" target="_blank" rel="noopener" class="project-link">[ repo → ]</a>`
-            : ''
-          }
-          ${p.liveDemo
-            ? `<a href="${p.liveDemo}" target="_blank" rel="noopener" class="project-link">[ live demo → ]</a>`
-            : ''
-          }
-        </div>
-      `;
+        let currentIndex = 0;
 
-      return `
-        <article class="project-card reveal">
 
-          ${p.thumbnail
+        // ---------------------------------------------------------------
+        // Build project cards
+        // ---------------------------------------------------------------
+
+        stage.innerHTML = projects.map((p) => {
+
+          const metricsHtml = (p.metrics && p.metrics.length)
             ? `
-              <div class="project-image">
-                <img src="${p.thumbnail}" alt="${p.name}">
+              <div class="results-table">
+
+                ${p.metrics.slice(0, 2).map(m => `
+                  <div class="results-row">
+                    <span class="r-label">${m.label}</span>
+                    <span class="r-value">${m.value}</span>
+                  </div>
+                `).join('')}
+
               </div>
             `
-            : ''
+            : '';
+
+
+          const links = `
+            <div class="project-links">
+
+              ${p.github
+                ? `
+                  <a
+                    href="${p.github}"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link"
+                  >
+                    [ repo → ]
+                  </a>
+                `
+                : ''
+              }
+
+              ${p.liveDemo
+                ? `
+                  <a
+                    href="${p.liveDemo}"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link"
+                  >
+                    [ live demo → ]
+                  </a>
+                `
+                : ''
+              }
+
+            </div>
+          `;
+
+
+          return `
+            <article class="project-card">
+
+              <!-- =====================================================
+                  IMAGE / VISUAL
+                  ===================================================== -->
+
+              ${
+                p.thumbnail
+                  ? `
+                    <div class="project-visual">
+
+                      <img
+                        src="${p.thumbnail}"
+                        alt="${p.title || p.name}"
+                        loading="lazy"
+                      >
+
+                    </div>
+                  `
+                  : ''
+              }
+
+
+              <!-- =====================================================
+                  PROJECT INFORMATION
+                  ===================================================== -->
+
+              <div class="project-content">
+
+                <div class="project-head">
+
+                  <span class="project-status">
+                    ${p.status || ''}
+                    ${p.year ? ' · ' + p.year : ''}
+                  </span>
+
+                  <h3>
+                    ${p.title || p.name}
+                  </h3>
+
+                  <p class="project-tagline">
+                    ${p.tagline || ''}
+                  </p>
+
+                </div>
+
+
+                <p class="project-desc">
+                  ${p.shortDescription || ''}
+                </p>
+
+
+                <div class="tech-row">
+
+                  ${(p.tech || [])
+                    .slice(0, 3)
+                    .map(t => `
+                      <span class="tech-tag">${t}</span>
+                    `)
+                    .join('')
+                  }
+
+                </div>
+
+
+                ${metricsHtml}
+
+
+                ${links}
+
+              </div>
+
+
+              <!-- =====================================================
+                  SIDE-CARD TITLE
+                  ===================================================== -->
+
+              <span class="project-preview-title">
+                ${p.title || p.name}
+              </span>
+
+            </article>
+          `;
+
+        }).join('');
+
+
+        const cards = Array.from(
+          stage.querySelectorAll('.project-card')
+        );
+
+
+        // ---------------------------------------------------------------
+        // Update carousel state
+        // ---------------------------------------------------------------
+
+        function updateCarousel() {
+
+          const total = cards.length;
+
+          const previousIndex =
+            (currentIndex - 1 + total) % total;
+
+          const nextIndex =
+            (currentIndex + 1) % total;
+
+
+          cards.forEach((card, index) => {
+
+            card.classList.remove(
+              'is-active',
+              'is-prev',
+              'is-next',
+              'is-hidden'
+            );
+
+
+            if (index === currentIndex) {
+
+              card.classList.add('is-active');
+
+            } else if (index === previousIndex) {
+
+              card.classList.add('is-prev');
+
+            } else if (index === nextIndex) {
+
+              card.classList.add('is-next');
+
+            } else {
+
+              card.classList.add('is-hidden');
+
+            }
+
+          });
+
+
+          // -------------------------------------------------------------
+          // Counter
+          // -------------------------------------------------------------
+
+          if (counter) {
+
+            counter.textContent =
+              `${String(currentIndex + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+
           }
 
-          <div class="project-head">
-            <span class="project-status">
-              ${p.status || ''}${p.year ? ' · ' + p.year : ''}
-            </span>
 
-            <h3>${p.title || p.name}</h3>
+          // -------------------------------------------------------------
+          // Navigation state
+          // -------------------------------------------------------------
 
-            <p class="project-tagline">
-              ${p.tagline || ''}
-            </p>
-          </div>
+          if (total <= 1) {
 
-          <p class="project-desc">
-            ${p.shortDescription || ''}
-          </p>
+            prevButton.disabled = true;
+            nextButton.disabled = true;
 
-          <div class="tech-row">
-            ${(p.tech || [])
-              .slice(0, 3)
-              .map(t => `<span class="tech-tag">${t}</span>`)
-              .join('')}
-          </div>
+          } else {
 
-          ${metricsHtml}
+            prevButton.disabled = false;
+            nextButton.disabled = false;
 
-          ${links}
+          }
 
-        </article>
-      `;
-    }).join('');
-  }
+        }
+
+
+        // ---------------------------------------------------------------
+        // Previous
+        // ---------------------------------------------------------------
+
+        function showPrevious() {
+
+          currentIndex =
+            (currentIndex - 1 + cards.length) % cards.length;
+
+          updateCarousel();
+
+        }
+
+
+        // ---------------------------------------------------------------
+        // Next
+        // ---------------------------------------------------------------
+
+        function showNext() {
+
+          currentIndex =
+            (currentIndex + 1) % cards.length;
+
+          updateCarousel();
+
+        }
+
+
+        // ---------------------------------------------------------------
+        // Buttons
+        // ---------------------------------------------------------------
+
+        prevButton.addEventListener(
+          'click',
+          showPrevious
+        );
+
+        nextButton.addEventListener(
+          'click',
+          showNext
+        );
+
+
+        // ---------------------------------------------------------------
+        // Side-card click
+        // ---------------------------------------------------------------
+
+        cards.forEach((card, index) => {
+
+          card.addEventListener('click', (event) => {
+
+            /*
+            * Don't hijack actual project links.
+            */
+
+            if (
+              event.target.closest('a') ||
+              event.target.closest('button')
+            ) {
+              return;
+            }
+
+
+            /*
+            * Clicking the active card does nothing.
+            */
+
+            if (index === currentIndex) {
+              return;
+            }
+
+
+            /*
+            * Clicking either side project brings it to center.
+            */
+
+            currentIndex = index;
+
+            updateCarousel();
+
+          });
+
+        });
+
+
+        // ---------------------------------------------------------------
+        // Keyboard navigation
+        // ---------------------------------------------------------------
+
+        container.setAttribute('tabindex', '0');
+
+        container.addEventListener('keydown', (event) => {
+
+          if (event.key === 'ArrowLeft') {
+
+            event.preventDefault();
+
+            showPrevious();
+
+          }
+
+
+          if (event.key === 'ArrowRight') {
+
+            event.preventDefault();
+
+            showNext();
+
+          }
+
+        });
+
+
+        // ---------------------------------------------------------------
+        // Touch / swipe
+        // ---------------------------------------------------------------
+
+        let touchStartX = 0;
+
+        let touchEndX = 0;
+
+
+        stage.addEventListener(
+          'touchstart',
+          (event) => {
+
+            touchStartX =
+              event.changedTouches[0].screenX;
+
+          },
+          { passive: true }
+        );
+
+
+        stage.addEventListener(
+          'touchend',
+          (event) => {
+
+            touchEndX =
+              event.changedTouches[0].screenX;
+
+
+            const distance =
+              touchEndX - touchStartX;
+
+
+            const swipeThreshold = 50;
+
+
+            if (Math.abs(distance) < swipeThreshold) {
+              return;
+            }
+
+
+            if (distance < 0) {
+
+              showNext();
+
+            } else {
+
+              showPrevious();
+
+            }
+
+          },
+          { passive: true }
+        );
+
+
+        // ---------------------------------------------------------------
+        // Initial render
+        // ---------------------------------------------------------------
+
+        updateCarousel();
+      }
 
   // ------------------------------------------------------------------
   // Experience
@@ -311,31 +653,262 @@ document.addEventListener('DOMContentLoaded', () => {
   // ------------------------------------------------------------------
   // Changelog (timeline styled as commits)
   // ------------------------------------------------------------------
+  // ------------------------------------------------------------------
+  // Milestones — horizontal engineering journey
+  // ------------------------------------------------------------------
+
   function renderTimeline(timeline) {
+
     const container = document.getElementById('timeline-container');
-    let major = 1, minor = 0;
 
-    container.innerHTML = timeline.map(item => {
-      const tag = `v${major}.${minor}.0`;
-      if (/graduat/i.test(item.title)) { major += 1; minor = 0; } else { minor += 1; }
+    if (!container || !timeline || !timeline.length) return;
 
-      return `
-        <div class="commit reveal">
-          <span class="commit-hash">${tag}</span>
-          <span class="commit-date">${item.date}</span>
-          <span class="commit-msg"><strong>${verb(item.title)}:</strong> ${item.description}</span>
+    const nodes = container.querySelector('#milestone-nodes');
+    const detail = container.querySelector('#milestone-detail');
+    const counter = container.querySelector('#milestone-counter');
+    const prevBtn = container.querySelector('#milestone-prev');
+    const nextBtn = container.querySelector('#milestone-next');
+
+    let activeIndex = 0;
+
+
+    // --------------------------------------------------------------
+    // Helpers
+    // --------------------------------------------------------------
+
+    function formatDate(dateString) {
+
+      const date = new Date(`${dateString}-01`);
+
+      if (Number.isNaN(date.getTime())) {
+        return dateString;
+      }
+
+      return new Intl.DateTimeFormat('en-US', {
+        month: 'short',
+        year: 'numeric'
+      }).format(date);
+    }
+
+
+    function getType(title) {
+
+      if (/graduat|degree|b\.e\.|education/i.test(title)) {
+        return 'Education';
+      }
+
+      if (/internship|intern/i.test(title)) {
+        return 'Internship';
+      }
+
+      if (/lead|gdgc|mentor/i.test(title)) {
+        return 'Leadership';
+      }
+
+      if (/join|employment|work|tech mahindra/i.test(title)) {
+        return 'Career';
+      }
+
+      return 'Milestone';
+    }
+
+
+    // --------------------------------------------------------------
+    // Render timeline nodes
+    // --------------------------------------------------------------
+
+    nodes.innerHTML = timeline.map((item, index) => `
+      <button
+        class="milestone-node ${index === 0 ? 'is-active' : ''}"
+        type="button"
+        data-index="${index}"
+        aria-label="View milestone: ${item.title}"
+        aria-current="${index === 0 ? 'step' : 'false'}"
+      >
+
+        <span class="milestone-node-dot"></span>
+
+        <span class="milestone-node-date">
+          ${formatDate(item.date)}
+        </span>
+
+        <span class="milestone-node-title">
+          ${item.title}
+        </span>
+
+      </button>
+    `).join('');
+
+
+    // --------------------------------------------------------------
+    // Render active milestone
+    // --------------------------------------------------------------
+
+    function updateMilestone(index, animate = true) {
+
+      if (index < 0 || index >= timeline.length) return;
+
+      activeIndex = index;
+
+      const item = timeline[index];
+
+      if (animate) {
+        detail.classList.add('is-changing');
+
+        setTimeout(() => {
+          renderDetail(item);
+          detail.classList.remove('is-changing');
+        }, 180);
+
+      } else {
+        renderDetail(item);
+      }
+
+      // Update node states
+      nodes.querySelectorAll('.milestone-node').forEach((node, i) => {
+
+        const isActive = i === activeIndex;
+
+        node.classList.toggle('is-active', isActive);
+
+        node.setAttribute(
+          'aria-current',
+          isActive ? 'step' : 'false'
+        );
+
+      });
+
+
+      // Update counter
+      counter.textContent =
+        `${String(activeIndex + 1).padStart(2, '0')} / ${String(timeline.length).padStart(2, '0')}`;
+
+
+      // Update navigation
+      prevBtn.disabled = activeIndex === 0;
+      nextBtn.disabled = activeIndex === timeline.length - 1;
+
+
+      // Keep active node visible
+      const activeNode =
+        nodes.querySelector(`[data-index="${activeIndex}"]`);
+
+      if (activeNode) {
+
+        activeNode.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+
+      }
+    }
+
+
+    // --------------------------------------------------------------
+    // Detail renderer
+    // --------------------------------------------------------------
+
+    function renderDetail(item) {
+
+      detail.innerHTML = `
+        <div class="milestone-detail-meta">
+
+          <span class="milestone-detail-date">
+            ${formatDate(item.date)}
+          </span>
+
+          <span class="milestone-detail-type">
+            ${getType(item.title)}
+          </span>
+
         </div>
-      `;
-    }).join('');
-  }
 
-  function verb(title) {
-    if (/started|began/i.test(title)) return 'init';
-    if (/graduat/i.test(title)) return 'release';
-    if (/built|built|designed|developed/i.test(title)) return 'feat';
-    if (/joined|internship/i.test(title)) return 'merge';
-    if (/completed|concluded/i.test(title)) return 'close';
-    return 'update';
+        <h3>
+          ${item.title}
+        </h3>
+
+        <p>
+          ${item.description}
+        </p>
+      `;
+    }
+
+
+    // --------------------------------------------------------------
+    // Node interaction
+    // --------------------------------------------------------------
+
+    nodes.addEventListener('click', event => {
+
+      const node = event.target.closest('.milestone-node');
+
+      if (!node) return;
+
+      updateMilestone(
+        Number(node.dataset.index)
+      );
+
+    });
+
+
+    // --------------------------------------------------------------
+    // Arrow controls
+    // --------------------------------------------------------------
+
+    prevBtn.addEventListener('click', () => {
+
+      if (activeIndex > 0) {
+        updateMilestone(activeIndex - 1);
+      }
+
+    });
+
+
+    nextBtn.addEventListener('click', () => {
+
+      if (activeIndex < timeline.length - 1) {
+        updateMilestone(activeIndex + 1);
+      }
+
+    });
+
+
+    // --------------------------------------------------------------
+    // Keyboard navigation
+    // --------------------------------------------------------------
+
+    container.addEventListener('keydown', event => {
+
+      if (event.key === 'ArrowLeft') {
+
+        event.preventDefault();
+
+        if (activeIndex > 0) {
+          updateMilestone(activeIndex - 1);
+        }
+
+      }
+
+      if (event.key === 'ArrowRight') {
+
+        event.preventDefault();
+
+        if (activeIndex < timeline.length - 1) {
+          updateMilestone(activeIndex + 1);
+        }
+
+      }
+
+    });
+
+
+    // --------------------------------------------------------------
+    // Initial state
+    // --------------------------------------------------------------
+
+    updateMilestone(0, false);
+
   }
 
   // ------------------------------------------------------------------

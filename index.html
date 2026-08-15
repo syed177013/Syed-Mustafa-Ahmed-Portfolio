@@ -140,13 +140,45 @@
 </section>
 
 <!-- ============================== PROJECTS / EVALUATION RESULTS ============================== -->
+<!-- ============================== PROJECTS ============================== -->
+
 <section id="projects" class="section section--tint">
+
   <div class="section-inner">
+
     <p class="eyebrow"></p>
     <h2 class="section-title">Selected projects</h2>
-    
-    <div class="projects-grid" id="projects-container"></div>
+
+    <div class="projects-carousel" id="projects-container">
+
+      <button
+        class="projects-nav projects-nav--prev"
+        type="button"
+        aria-label="Previous project"
+      >
+        ←
+      </button>
+
+      <div class="projects-stage">
+        <!-- Project cards are injected by renderProjects() -->
+      </div>
+
+      <button
+        class="projects-nav projects-nav--next"
+        type="button"
+        aria-label="Next project"
+      >
+        →
+      </button>
+
+    </div>
+
+    <div class="projects-pagination" aria-live="polite">
+      <span class="projects-counter">01 / 01</span>
+    </div>
+
   </div>
+
 </section>
 
 <!-- ============================== EXPERIENCE ============================== -->
@@ -185,13 +217,60 @@
   </div>
 </section>
 
-<!-- ============================== CHANGELOG / TIMELINE ============================== -->
+<!-- ============================== MILESTONES / ENGINEERING JOURNEY ============================== -->
+
 <section id="timeline" class="section">
+
   <div class="section-inner">
-    <p class="eyebrow"></p>
+
+    <p class="eyebrow">engineering journey</p>
+
     <h2 class="section-title">Milestones</h2>
-    <div class="changelog" id="timeline-container"></div>
+
+    <div class="milestone-carousel" id="timeline-container">
+
+      <div class="milestone-rail">
+
+        <div class="milestone-line"></div>
+
+        <div class="milestone-nodes" id="milestone-nodes"></div>
+
+      </div>
+
+      <div class="milestone-detail" id="milestone-detail"></div>
+
+      <div class="milestone-controls">
+
+        <button
+          class="milestone-nav milestone-nav--prev"
+          id="milestone-prev"
+          type="button"
+          aria-label="Previous milestone"
+        >
+          ←
+        </button>
+
+        <div
+          class="milestone-counter"
+          id="milestone-counter"
+          aria-live="polite"
+        ></div>
+
+        <button
+          class="milestone-nav milestone-nav--next"
+          id="milestone-next"
+          type="button"
+          aria-label="Next milestone"
+        >
+          →
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
 </main>
