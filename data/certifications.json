@@ -1,4 +1,14 @@
 [
+  
+  {
+    "name": "Fundamentals of Agents",
+    "issuer": "HuggingFace",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "assets/Certificate_assets/Fundamentals of Agents.png",
+    "skills": ""
+  },
   {
     "name": "Fundamentals of Generative AI",
     "issuer": "Microsoft",
@@ -71,20 +81,7 @@
       "Virtualization"
     ]
   },
-  {
-    "name": "Celonis Process Mining Fundamentals",
-    "issuer": "Celonis",
-    "date": "",
-    "credentialId": "",
-    "credentialUrl": "",
-    "certificateImage": "assets/Certificate_assets/CelonisProcessMine.png",
-    "skills": [
-      "Process Mining",
-      "Business Process Analysis",
-      "Business Intelligence"
-    ]
-  },
-        {
+    {
     "name": "Business Analytics Internship",
     "issuer": "SmartInternz × Qlik Sense",
     "date": "",
