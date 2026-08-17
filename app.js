@@ -744,7 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render active milestone
     // --------------------------------------------------------------
 
-    function updateMilestone(index, animate = true) {
+    function updateMilestone(index, animate = true, shouldScroll = true) {
 
       if (index < 0 || index >= timeline.length) return;
 
@@ -788,22 +788,24 @@ document.addEventListener('DOMContentLoaded', () => {
       prevBtn.disabled = activeIndex === 0;
       nextBtn.disabled = activeIndex === timeline.length - 1;
 
+      if (shouldScroll) {
 
-      // Keep active node visible
-      const activeNode =
-        nodes.querySelector(`[data-index="${activeIndex}"]`);
+        // Keep active node visible
+        const activeNode =
+          nodes.querySelector(`[data-index="${activeIndex}"]`);
 
-      if (activeNode) {
+        if (activeNode) {
 
-        activeNode.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
-        });
+          activeNode.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+          });
 
+        }
       }
-    }
-
+  
+    }  
 
     // --------------------------------------------------------------
     // Detail renderer
@@ -907,7 +909,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial state
     // --------------------------------------------------------------
 
-    updateMilestone(0, false);
+    updateMilestone(0, false, false);
 
   }
 
