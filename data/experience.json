@@ -9,14 +9,8 @@
     "start": "Jun 2025",
     "end": "Feb 2026",
     "currentlyWorking": false,
-    "description": "Provided enterprise IT support for managed endpoints, resolving operating system, networking, software, and access management issues while maintaining high customer satisfaction and SLA compliance.",
-    "responsibilities": [
-      "Managed enterprise endpoints using Microsoft Intune.",
-      "Diagnosed and resolved operating system, networking, software, and access management issues.",
-      "Provided remote support using SSH, RDP, and Apache Guacamole.",
-      "Handled incident management and escalations through BMC Helix.",
-      "Collaborated with internal teams to improve service quality and response efficiency."
-    ],
+    "description": "Provided enterprise IT support for managed endpoints, resolving operating system, networking, software, and access management issues while maintaining high client satisfaction and SLA compliance.",
+    "responsibilities": "",
     "technologies": [
       "Microsoft Intune",
       "BMC Helix",
@@ -27,8 +21,8 @@
       "Linux"
     ],
     "achievements": [
-      "Maintained a 97% customer satisfaction score.",
       "Recognized as Best Employee.",
+      "Maintained a 97% customer satisfaction score.",
       "Resolved hundreds of enterprise IT incidents."
     ]
   },
@@ -44,10 +38,8 @@
     "currentlyWorking": false,
     "description": "Led the App Development team, mentoring students, coordinating technical workshops, and organizing hands-on Android development initiatives.",
     "responsibilities": [
-      "Led a team of four student developers.",
       "Mentored members in Android application development.",
-      "Organized workshops and technical learning sessions.",
-      "Coordinated project activities and development tasks."
+      "Organized workshops and technical learning sessions."
     ],
     "technologies": [
       "Android",
@@ -72,11 +64,7 @@
     "end": "May 2024",
     "currentlyWorking": false,
     "description": "Analyzed airline industry datasets and developed interactive dashboards to support business decision-making through data-driven insights.",
-    "responsibilities": [
-      "Analyzed airline datasets to identify operational trends.",
-      "Created dashboards using Qlik Sense.",
-      "Presented analytical findings through interactive visualizations."
-    ],
+    "responsibilities": "",
     "technologies": [
       "Qlik Sense",
       "Data Analysis",
@@ -84,7 +72,9 @@
       "Excel"
     ],
     "achievements": [
-      "Built interactive dashboards for business reporting."
+      "Analyzed airline datasets to identify operational trends.",
+      "Created dashboards using Qlik Sense.",
+      "Presented analytical findings through interactive visualizations."
     ]
   },
   {
@@ -98,11 +88,7 @@
     "end": "Feb 2024",
     "currentlyWorking": false,
     "description": "Performed automated and functional testing of web applications while contributing to quality assurance and software reliability improvements.",
-    "responsibilities": [
-      "Executed functional and automated test cases.",
-      "Reported defects and verified issue resolutions.",
-      "Assisted in improving testing workflows."
-    ],
+    "responsibilities": "",
     "technologies": [
       "Selenium",
       "Katalon",
@@ -110,7 +96,8 @@
       "Quality Assurance"
     ],
     "achievements": [
-      "Improved application testing efficiency through structured QA practices."
-    ]
+      "Executed functional and automated test cases.",
+      "Reported defects and verified issue resolutions.",
+      "Assisted in improving testing workflows."]
   }
 ]

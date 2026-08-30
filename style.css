@@ -21,7 +21,7 @@
 [data-theme="dark"] {
 
   /* Background */
-  --paper: #181718;
+  --paper: #11131A;
 
   /* Surfaces */
   --surface: rgba(255, 255, 255, 0.045);
@@ -36,7 +36,7 @@
   --line-strong: rgba(255, 255, 255, 0.16);
 
   /* Primary — Coral Pink */
-  --signal: #FF9D9D;
+  --signal: #f68787;
   --signal-dim: rgba(255, 157, 157, 0.13);
   --signal-line: rgba(255, 157, 157, 0.42);
 
@@ -76,9 +76,8 @@
 
 [data-theme="light"] {
 
-  --paper: #F8F2F5;
-  --surface: #FFF9FB;
-
+  --paper:  #f6f6f6;
+  --surface: rgba(255, 249, 251, 0.78);
   --ink: #262342;
   --ink-soft: #514D68;
   --ink-faint: #817B94;
@@ -1201,16 +1200,185 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ==========================================================================
  *   ACHIEVEMENTS
  *   ========================================================================== */
-.achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 1.75rem; }
-.achievement-card { display: flex; gap: 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 1.5rem; }
-.achievement-icon {
-  flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%;
-  background: var(--signal-dim); color: var(--signal);
-  display: flex; align-items: center; justify-content: center; font-size: 1.05rem;
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 1.75rem;
 }
-.achievement-title { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.3rem; }
-.achievement-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-faint); margin-left: 0.5rem; }
-.achievement-desc { font-size: 0.98rem; color: var(--ink-soft); }
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.achievement-content {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.achievement-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--signal-dim);
+  color: var(--signal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+}
+
+.achievement-body {
+  min-width: 0;
+}
+
+.achievement-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.achievement-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-left: 0.5rem;
+}
+
+.achievement-desc {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+
+
+/* ==========================================================
+   ACHIEVEMENT EVIDENCE / IMAGE
+   ========================================================== */
+
+.achievement-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius-md) - 2px);
+  overflow: hidden;
+  background: var(--paper);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.achievement-media img {
+  display: block;
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
+}
+
+.achievement-media-label {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  padding: 0.35rem 0.65rem;
+
+  background: rgba(0, 0, 0, 0.68);
+  color: #fff;
+
+  border-radius: var(--radius-sm);
+
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  opacity: 0;
+  transform: translateY(4px);
+
+  transition:
+    opacity 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+
+.achievement-media:hover img {
+  transform: scale(1.025);
+}
+
+.achievement-media:hover .achievement-media-label,
+.achievement-media:focus-visible .achievement-media-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.achievement-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  background: rgba(0, 0, 0, 0.82);
+
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+
+  cursor: zoom-out;
+}
+
+.achievement-viewer.is-visible {
+  opacity: 1;
+}
+
+.achievement-viewer img {
+  display: block;
+  max-width: min(100%, 1100px);
+  max-height: 90vh;
+  object-fit: contain;
+
+  border-radius: var(--radius-md);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+  cursor: default;
+}
+
+.achievement-viewer-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+
+  cursor: pointer;
+  font-size: 1rem;
+}
 
 /* ==========================================================================
    MILESTONES — ENGINEERING JOURNEY

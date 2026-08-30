@@ -1,12 +1,12 @@
 {
-  "projects":0,
-  "certifications":0,
-  "experienceMonths":0,
-  "cgpa":"8.77",
-  "customerSatisfaction":"97%",
-  "studentsMentored":400,
-  "teamMembersLed":4,
-  "modelAccuracy":"83%",
-  "githubRepos":0,
-  "githubStars":0
+  "projects": 0,
+  "certifications": 0,
+  "experienceMonths": 0,
+  "cgpa": "8.77",
+  "_customerSatisfaction": "97%",
+  "studentsMentored": 400,
+  "_teamMembersLed": 4,
+  "_modelAccuracy": "83%",
+  "githubRepos": 0,
+  "githubStars": 0
 }

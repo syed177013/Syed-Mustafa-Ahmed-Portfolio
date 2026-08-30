@@ -40,6 +40,32 @@
     "certificateImage": "assets/Certificate_assets/PCAP.png",
     "skills": ""
   },
+
+    {
+    "name": "Data Analytics Certification powered by Capgemini",
+    "issuer": "Capgemini & ICT Academy",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "assets/Certificate_assets/Capgemini.jpeg",
+    "skills": ""
+  },
+
+  
+  {
+    "name": "Statify Data Science Bootcamp",
+    "issuer": "IIT Bhubaneswar",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "assets/Certificate_assets/DSBootCamp_IIT.png",
+    "skills": [
+      "Microsoft Fabric",
+      "Data Analytics",
+      "Data Engineering"
+    ]
+  },
+
   {
     "name": "CCNA v7 Enterprise Networking, Security and Automation",
     "issuer": "Cisco",
@@ -52,19 +78,6 @@
       "Enterprise Networks",
       "Network Security",
       "Automation"
-    ]
-  },
-  {
-    "name": "Statify Data Science Bootcamp",
-    "issuer": "IIT Bhubaneswar",
-    "date": "",
-    "credentialId": "",
-    "credentialUrl": "",
-    "certificateImage": "assets/Certificate_assets/DSBootCamp_IIT.png",
-    "skills": [
-      "Microsoft Fabric",
-      "Data Analytics",
-      "Data Engineering"
     ]
   },
 
@@ -81,6 +94,17 @@
       "Virtualization"
     ]
   },
+
+    {
+    "name": "Cybersecurity Essentials",
+    "issuer": "Cisco",
+    "date": "",
+    "credentialId": "",
+    "credentialUrl": "",
+    "certificateImage": "assets/Certificate_assets/Cybersecurity Essentials.jpeg",
+    "skills": ""
+  },
+
     {
     "name": "Business Analytics Internship",
     "issuer": "SmartInternz × Qlik Sense",

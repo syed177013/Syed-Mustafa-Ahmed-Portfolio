@@ -635,20 +635,86 @@ document.addEventListener('DOMContentLoaded', () => {
   // Achievements
   // ------------------------------------------------------------------
   function renderAchievements(achievements) {
+  
     const container = document.getElementById('achievements-container');
+
     container.innerHTML = achievements.map(a => `
-      <div class="achievement-card reveal">
-        <div class="achievement-icon"><i class="fas fa-${a.icon || 'star'}"></i></div>
-        <div>
-          <div class="achievement-title">${a.title}${a.date ? `<span class="achievement-date">${a.date}</span>` : ''}</div>
-          <p class="achievement-desc">${a.description}</p>
+      <article class="achievement-card ${a.image ? 'achievement-card--visual' : ''} reveal">
+
+        <div class="achievement-content">
+
+          <div class="achievement-icon">
+            <i class="fas fa-${a.icon || 'star'}"></i>
+          </div>
+
+          <div class="achievement-body">
+            <div class="achievement-title">
+              ${a.title}
+              ${a.date ? `<span class="achievement-date">${a.date}</span>` : ''}
+            </div>
+
+            <p class="achievement-desc">${a.description}</p>
+          </div>
+
         </div>
-      </div>
+
+        ${a.image ? `
+          <button
+            class="achievement-media"
+            type="button"
+            aria-label="View evidence for ${a.title}"
+            data-image="${a.image}"
+          >
+            <img
+              src="${a.image}"
+              alt="${a.title} — supporting document"
+              loading="lazy"
+            />
+            <span class="achievement-media-label">
+              <i class="fas fa-expand"></i>
+              View
+            </span>
+          </button>
+        ` : ''}
+
+      </article>
     `).join('');
-
-
-    
   }
+
+    document.addEventListener('click', (event) => {
+    const media = event.target.closest('.achievement-media');
+    if (!media) return;
+
+    const image = media.querySelector('img');
+
+    const viewer = document.createElement('div');
+    viewer.className = 'achievement-viewer';
+
+    viewer.innerHTML = `
+      <button class="achievement-viewer-close" type="button" aria-label="Close">
+        <i class="fas fa-xmark"></i>
+      </button>
+
+      <img src="${image.src}" alt="${image.alt}">
+    `;
+
+    document.body.appendChild(viewer);
+
+    requestAnimationFrame(() => {
+      viewer.classList.add('is-visible');
+    });
+
+    viewer.addEventListener('click', (e) => {
+      if (
+        e.target === viewer ||
+        e.target.closest('.achievement-viewer-close')
+      ) {
+        viewer.classList.remove('is-visible');
+
+        setTimeout(() => viewer.remove(), 250);
+      }
+    });
+  });
 
   // ------------------------------------------------------------------
   // Changelog (timeline styled as commits)
