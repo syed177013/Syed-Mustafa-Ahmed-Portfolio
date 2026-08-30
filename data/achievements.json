@@ -1,18 +1,26 @@
 [
-  
-  
-  {
-    "title": "IELTS Academic C1",
-    "description": "Achieved CEFR C1 English Proficiency through the IELTS Academic examination.",
-    "date": "",
-    "icon": "language",
-    "image": "assets/Certificate_assets/ielts.jpeg"
-  },
   {
   "title": "Research Publication — ICAISC-2025",
   "description": "Published research on FASECURE, our face anti-spoofing system, at ICAISC-2025.",
   "date": "2025",
   "icon": "file-lines",
   "image": "assets/Certificate_assets/ICAISC-2025.jpeg"
-}
+},
+{
+  "title": "Research Publication — IJARETY-2024",
+  "description": "Published research paper on the role of electric vehicles in combating CO2 emissions in the International Journal of Advanced Research in Education and Technology (IJARETY).",
+  "date": "2024-08",
+  "icon": "file-text",
+  "image": "assets/Certificate_assets/ijarety.jpeg",
+  "link": "https://ijarety.in/admin/img/13_Role.pdf"
+},
+{
+    "title": "IELTS Academic C1",
+    "description": "Achieved CEFR C1 English Proficiency through the IELTS Academic examination.",
+    "date": "",
+    "icon": "language",
+    "image": "assets/Certificate_assets/ielts.jpeg"
+  }
+
+
 ]
