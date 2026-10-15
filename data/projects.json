@@ -1,4 +1,131 @@
 [
+
+  {
+    "id": "sswavrecorder",
+    "name": "SSwavRecorder",
+    "slug": "sswavrecorder-android-wav-recorder",
+    "featured": true,
+    "status": "Completed",
+    "year": "2026",
+    "category": "Android Development",
+
+    "thumbnail": "assets/projects/wav/app_preview.jpg",
+    "heroImage": "",
+
+    "github": "https://github.com/syed177013/SSwavRecorder",
+    "liveDemo": "",
+    "video": "",
+
+    "title": "SSwavRecorder, A Native Android WAV Audio Recorder",
+    "tagline": "A lightweight Android audio recorder built with Kotlin and Jetpack Compose for capturing uncompressed WAV audio.",
+
+    "shortDescription": "Developed a native Android audio recording application that captures uncompressed 16-bit PCM WAV audio at 44.1 kHz in mono, featuring live waveform visualization, background recording support, and recording recovery functionality.",
+
+    "overview": "SSwavRecorder is a native Android application designed to provide straightforward WAV audio recording on devices where a dedicated WAV recording option may not be available. Built using Kotlin and Jetpack Compose, the application records uncompressed 16-bit PCM audio at a sample rate of 44.1 kHz using a mono channel configuration. It combines a live waveform display with a foreground recording service to support recording while the application is in the background. Recording recovery functionality helps address interruptions, while the application uses Hilt and Room as part of its dependency injection and data persistence architecture.",
+
+    "problem": "Many built-in smartphone recording applications prioritize compressed audio formats or do not expose a straightforward option for recording uncompressed PCM WAV audio. This can make it inconvenient for developers, audio enthusiasts, and technical projects that require predictable audio formats for processing, analysis, or experimentation.",
+
+    "solution": "Developed a dedicated Android WAV recorder using Kotlin and Jetpack Compose. The application captures mono audio as uncompressed 16-bit PCM at 44.1 kHz, displays a live waveform during recording, and uses a foreground service to support continued recording when the application moves into the background. Recovery functionality and structured application components help improve recording reliability and maintainability.",
+
+    "architecture": "User Interface (Jetpack Compose) → Recording Controls → Audio Capture and PCM Processing → WAV File Output. Supporting Components: Foreground Recording Service → Background Recording Support; Hilt → Dependency Injection; Room → Local Data Persistence.",
+
+    "workflow": "Launch application → Grant required microphone permissions → Start recording → Capture audio through Android audio APIs → Process audio as 16-bit PCM at 44.1 kHz, mono → Update the live waveform → Write audio data into a WAV file → Stop recording and finalize the file. Recovery mechanisms address supported recording interruptions.",
+
+    "tech": [
+      "Kotlin",
+      "Android SDK",
+      "Jetpack Compose",
+      "Android Audio APIs",
+      "PCM Audio",
+      "WAV",
+      "Foreground Services",
+      "Hilt",
+      "Room",
+      "Git",
+      "GitHub"
+    ],
+
+    "features": [
+      "Uncompressed WAV audio recording",
+      "16-bit PCM audio format",
+      "44.1 kHz sample rate",
+      "Mono audio capture",
+      "Live waveform visualization",
+      "Foreground recording service",
+      "Background recording support",
+      "Recording recovery functionality",
+      "Jetpack Compose user interface",
+      "Dependency injection using Hilt",
+      "Local persistence using Room"
+    ],
+
+    "highlights": [
+      "Built a native Android application using Kotlin and Jetpack Compose.",
+      "Implemented WAV recording with a defined PCM audio format and sampling configuration.",
+      "Integrated live waveform visualization for real-time recording feedback.",
+      "Used a foreground service to support audio recording outside the active application screen.",
+      "Organized application components using Android development libraries including Hilt and Room.",
+      "Developed a practical utility that also supports audio experimentation and signal-processing projects."
+    ],
+
+    "challenges": [
+      "Capturing audio and writing valid WAV files with the correct PCM format and audio metadata.",
+      "Keeping waveform visualization responsive while audio capture and file writing are in progress.",
+      "Managing microphone permissions and Android foreground-service requirements.",
+      "Handling recording interruptions and recovery without compromising the integrity of saved audio.",
+      "Coordinating UI state with recording operations and application lifecycle events."
+    ],
+
+    "lessonsLearned": [
+      "Audio file formats require careful handling of sample rates, channel configurations, bit depth, and WAV headers.",
+      "Android audio recording involves lifecycle management and platform-specific permission requirements.",
+      "Foreground services are useful for supported long-running recording tasks when configured according to Android requirements.",
+      "Separating recording logic from UI components improves maintainability and testability.",
+      "Real-time waveform rendering requires balancing visual responsiveness with audio-processing workloads."
+    ],
+
+    "futureImprovements": [
+      "Add configurable sample rates, channel counts, and recording formats.",
+      "Introduce audio playback and recording metadata displays.",
+      "Add recording duration, file size, and audio-level indicators.",
+      "Expand automated tests for recording interruptions and WAV file integrity.",
+      "Improve accessibility and support for different screen sizes.",
+      "Add export and sharing options for recorded audio files.",
+      "Explore integration with audio analysis and signal-processing workflows."
+    ],
+
+    "metrics": [
+      {
+        "label": "Platform",
+        "value": "Android"
+      },
+      {
+        "label": "Language",
+        "value": "Kotlin"
+      },
+      {
+        "label": "Audio Format",
+        "value": "16-bit PCM WAV"
+      },
+      {
+        "label": "Sample Rate",
+        "value": "44.1 kHz"
+      },
+      {
+        "label": "Channels",
+        "value": "Mono"
+      },
+      {
+        "label": "UI Framework",
+        "value": "Jetpack Compose"
+      }
+    ],
+
+    "screenshots": [],
+
+    "gallery": []
+  },
+
   {
     "id": "fasecure",
     "name": "FASECURE",
@@ -213,7 +340,138 @@
     "screenshots": [],
     "gallery": []
   },
-
+    
+    {
+    "id": "mangaasari",
+    "name": "MangaAsari",
+    "slug": "mangaasari-manga-discovery-and-aggregation",
+    "featured": true,
+    "status": "In Progress",
+    "year": "2026",
+    "category": "Backend & API Development",
+    "thumbnail": "assets/projects/manga/homepage.png",
+    "heroImage": "",
+    "github": "https://github.com/syed177013/MangaAsari",
+    "liveDemo": "",
+    "video": "",
+    "title": "MangaAsari — Manga Discovery & Chapter Aggregation",
+    "tagline": "A multi-source manga discovery platform built around a canonical data model and idempotent chapter synchronization.",
+    "shortDescription": "Built a Python-based manga discovery application integrating AniList and MangaDex with FastAPI, SQLite, and SQLAlchemy. Designed a source-agnostic data model that separates canonical manga and chapters from source-specific mappings and releases, enabling repeatable synchronization without duplicate records.",
+    "overview": "MangaAsari is a manga discovery and chapter aggregation project developed to simplify finding manga and locating specific chapters across external sources. It uses AniList for manga search and metadata, while MangaDex provides source matching and chapter metadata. Users can select a chapter and navigate directly to its original MangaDex reader. The application maintains its own structured representation of manga, chapters, external sources, and source-specific releases rather than storing raw API responses. Built with Python, FastAPI, SQLite, and SQLAlchemy, the project explores maintainable backend architecture and provides a foundation for integrating additional manga sources through a shared interface.",
+    "problem": "Finding a specific manga chapter can require searching across multiple websites and navigating different catalogues. From a software design perspective, integrating multiple sources also introduces data consistency challenges: the same manga or chapter may appear under different external identifiers, and a single chapter may have multiple releases from the same source. Treating every external release as a separate manga chapter would create duplicate records and make future source integration more difficult.",
+    "solution": "Developed a backend that separates canonical manga and chapter entities from their source-specific representations. AniList provides manga discovery, while MangaDex is integrated through a dedicated source adapter. MangaSourceMapping connects canonical manga records to external manga identifiers, and ChapterSource associates canonical chapters with individual source releases. Chapter synchronization finds or creates the appropriate records and is designed to be idempotent, allowing repeated synchronization without creating duplicate entries. The application links users to the original MangaDex reader instead of hosting manga content.",
+    "architecture": "Client Interface → FastAPI Application → Application Logic → AniList Integration / Manga Source Interface → MangaDex Adapter → External API Responses → Canonical Data Processing → SQLAlchemy ORM → SQLite Database. Data Model: Manga → MangaSourceMapping → Source; Manga → Chapter → ChapterSource → Source.",
+    "workflow": "Search for a manga through AniList → Process its metadata and maintain a canonical manga record → Find or manually match the manga to an external source → Store the source-specific manga identifier → Fetch available chapter metadata through the source adapter → Match or create canonical chapter records → Associate each external release with its canonical chapter → Persist changes in SQLite → Let the user select a chapter and open its original MangaDex URL.",
+    "tech": [
+      "Python",
+      "FastAPI",
+      "REST APIs",
+      "SQLite",
+      "SQLAlchemy",
+      "AniList API",
+      "MangaDex API",
+      "Asynchronous API Integration",
+      "Database Modeling",
+      "ORM",
+      "Idempotent Synchronization",
+      "Git",
+      "GitHub"
+    ],
+    "features": [
+      "Manga search using AniList",
+      "Local manga library",
+      "MangaDex source search",
+      "Manual manga-to-source matching",
+      "Persistent source-to-manga mappings",
+      "Canonical manga and chapter entities",
+      "Source-specific chapter release tracking",
+      "Multiple releases associated with one canonical chapter",
+      "Chapter metadata synchronization",
+      "Idempotent synchronization to prevent duplicate records",
+      "Source abstraction for future integrations",
+      "Direct navigation to original MangaDex chapter URLs",
+      "SQLite persistence using SQLAlchemy"
+    ],
+    "highlights": [
+      "Designed a canonical data model that separates manga and chapter identities from their external source records.",
+      "Implemented source mapping to preserve external manga identifiers and avoid repeatedly searching for known source matches during synchronization.",
+      "Modeled chapter releases separately from canonical chapters, allowing multiple releases of the same chapter to coexist without creating duplicate canonical chapters.",
+      "Structured source integrations around a common MangaSource interface, with a dedicated MangaDex implementation and a mock source for development.",
+      "Designed chapter synchronization to be idempotent, so rerunning synchronization does not create duplicate records.",
+      "Processed a Detective Conan MangaDex feed containing 1,558 source chapter records, resulting in 1,168 canonical chapters because multiple releases can map to the same chapter.",
+      "Verified that a subsequent synchronization of the same feed added zero new chapters.",
+      "Integrated AniList and MangaDex while keeping chapter reading on the original source rather than implementing a proprietary reader."
+    ],
+    "challenges": [
+      "Distinguishing a canonical chapter from individual releases published by external sources.",
+      "Representing manga and chapter relationships across multiple sources without coupling the database schema to one provider.",
+      "Maintaining reliable mappings between canonical manga records and external source identifiers.",
+      "Designing synchronization logic that can be repeated safely without creating duplicate records.",
+      "Reconciling chapter metadata when different releases from the same source may correspond to the same canonical chapter.",
+      "Keeping external API integration separate from the application's data model to support future source adapters."
+    ],
+    "lessonsLearned": [
+      "Canonical entities and source-specific mappings provide a useful foundation for aggregating data from multiple external providers.",
+      "A chapter and a chapter release are different concepts and should be modeled separately when multiple releases can represent the same underlying chapter.",
+      "Idempotent synchronization makes recurring data ingestion safer and easier to reason about.",
+      "Persisting external identifiers allows applications to reuse known mappings instead of repeatedly searching remote services.",
+      "A shared source interface reduces coupling between application logic and individual API providers.",
+      "Structured local data models offer more control over relationships and consistency than storing raw external API responses alone.",
+      "Using original-source links can deliver useful aggregation functionality without building or hosting a separate content reader."
+    ],
+    "futureImprovements": [
+      "Integrate additional manga sources through the existing source interface.",
+      "Improve automatic matching between manga across external catalogues.",
+      "Add user-selectable chapter languages.",
+      "Expand chapter filtering, sorting, and discovery controls.",
+      "Improve the user interface and overall discovery experience.",
+      "Introduce caching and more resilient handling of external API failures where appropriate.",
+      "Add automated tests for source adapters, database relationships, and synchronization idempotency.",
+      "Implement reading progress and chapter notifications.",
+      "Explore an Android application backed by the same multi-source architecture.",
+      "Evaluate applicable third-party API requirements before introducing an in-app reader or changing how external content is accessed."
+    ],
+    "metrics": [
+      {
+        "label": "Backend",
+        "value": "FastAPI"
+      },
+      {
+        "label": "Language",
+        "value": "Python"
+      },
+      {
+        "label": "Database",
+        "value": "SQLite"
+      },
+      {
+        "label": "ORM",
+        "value": "SQLAlchemy"
+      },
+      {
+        "label": "Manga Search",
+        "value": "AniList"
+      },
+      {
+        "label": "Chapter Source",
+        "value": "MangaDex"
+      },
+      {
+        "label": "Source Chapter Records",
+        "value": "1,558"
+      },
+      {
+        "label": "Canonical Chapters",
+        "value": "1,168"
+      },
+      {
+        "label": "New Records on Repeat Sync",
+        "value": "0"
+      }
+    ],
+    "screenshots": [],
+    "gallery": []
+  },
     
 
     {

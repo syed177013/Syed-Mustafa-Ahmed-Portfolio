@@ -11,6 +11,10 @@
         "icon": "java"
       },
       {
+        "name": "Kotlin",
+        "icon": "kotlin"
+      },
+      {
         "name": "C++",
         "icon": "cplusplus"
       },
@@ -29,7 +33,7 @@
     "skills": [
       {
         "name": "Machine Learning",
-        "icon": "tensorflow"
+        "icon": "scikitlearn"
       },
       {
         "name": "Deep Learning",
@@ -42,6 +46,42 @@
       {
         "name": "TensorFlow",
         "icon": "tensorflow"
+      },
+      {
+        "name": "Computer Vision",
+        "icon": "opencv"
+      },
+      {
+        "name": "Generative AI",
+        "icon": "openai"
+      },
+      {
+        "name": "Retrieval-Augmented Generation (RAG)",
+        "icon": "database"
+      },
+      {
+        "name": "LangChain",
+        "icon": "langchain"
+      },
+      {
+        "name": "ChromaDB",
+        "icon": "database"
+      },
+      {
+        "name": "scikit-learn",
+        "icon": "scikitlearn"
+      },
+      {
+        "name": "OpenCV",
+        "icon": "opencv"
+      },
+      {
+        "name": "Pandas",
+        "icon": "pandas"
+      },
+      {
+        "name": "NumPy",
+        "icon": "numpy"
       },
       {
         "name": "Data Analysis",
@@ -61,12 +101,20 @@
     "category": "Web & Software Development",
     "skills": [
       {
+        "name": "FastAPI",
+        "icon": "fastapi"
+      },
+      {
         "name": "Flask",
         "icon": "flask"
       },
       {
         "name": "Android Development",
         "icon": "android"
+      },
+      {
+        "name": "Jetpack Compose",
+        "icon": "jetpackcompose"
       },
       {
         "name": "Firebase",
@@ -77,8 +125,16 @@
         "icon": "sqlite"
       },
       {
+        "name": "SQLAlchemy",
+        "icon": "database"
+      },
+      {
         "name": "REST APIs",
-        "icon": "fastapi"
+        "icon": "code"
+      },
+      {
+        "name": "GitHub",
+        "icon": "github"
       }
     ]
   },
@@ -92,6 +148,10 @@
       {
         "name": "Git",
         "icon": "git"
+      },
+      {
+        "name": "Jupyter Notebook",
+        "icon": "jupyter"
       },
       {
         "name": "Microsoft Intune",
@@ -123,7 +183,7 @@
         "icon": "code"
       },
       {
-        "name": "Data Structures",
+        "name": "Data Structures & Algorithms",
         "icon": "database"
       },
       {
@@ -131,12 +191,20 @@
         "icon": "windows"
       },
       {
-        "name": "Networking",
+        "name": "Computer Networking",
         "icon": "network"
       },
       {
         "name": "Software Testing",
         "icon": "bug"
+      },
+      {
+        "name": "Database Design",
+        "icon": "database"
+      },
+      {
+        "name": "Asynchronous Programming",
+        "icon": "code"
       }
     ]
   }
