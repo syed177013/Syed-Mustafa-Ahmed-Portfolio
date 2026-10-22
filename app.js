@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
   .then(([profile, interests, learning, stats, skills, projects, experience, education, certifications, achievements, timeline, socials]) => {
 
     renderHero(profile, learning, interests);
-    renderFigMilestones(timeline);
+    renderCredentialBadges();
+    //renderFigMilestones(timeline);
     renderStats(stats, projects, certifications);
     renderSkills(skills);
     renderProjects(projects);
@@ -92,6 +93,253 @@ document.addEventListener('DOMContentLoaded', () => {
   function truncate(str, n) {
     return str.length > n ? str.slice(0, n - 1).trim() + '…' : str;
   }
+
+  const credentialBadges = [
+    {
+      name: "Claude 101",
+      image: "assets/badges/claude101.png",
+      url: ""
+    },
+    {
+      name: "Hugging Face Agents",
+      image: "assets/badges/HF.png",
+      url: ""
+    },
+    {
+      name: "Vertex Ai",
+      image: "assets/badges/prompt-design-in-vertex-ai-skill-badge.png",
+      url: ""
+    },
+    {
+      name: "Microsoft GenAI",
+      image: "assets/badges/GenAIFund.png",
+      url: ""
+    },
+    {
+      name: "CCNA",
+      image: "assets/badges/ccna-switching-routing-and-wireless-essentials.png",
+      url: ""
+    },
+    {
+      name: "Cybersecurity essentials",
+      image: "assets/badges/cybersecurity-essentials.png",
+      url: ""
+    }
+  ];
+
+  
+  let credentialPreviewDialog;
+
+  function openCredentialPreview(badge) {
+    if (!credentialPreviewDialog) {
+      const dialog = document.createElement("dialog");
+      dialog.className = "credential-preview";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.className = "credential-preview-close";
+      closeButton.textContent = "×";
+      closeButton.setAttribute("aria-label", "Close preview");
+      closeButton.addEventListener("click", () => dialog.close());
+
+      const image = document.createElement("img");
+      image.className = "credential-preview-image";
+
+      const title = document.createElement("h2");
+      title.className = "credential-preview-title";
+
+      const link = document.createElement("a");
+      link.className = "credential-preview-link";
+      link.textContent = "View original credential";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+
+      dialog.append(closeButton, image, title, link);
+
+      dialog.addEventListener("click", event => {
+        if (event.target === dialog) dialog.close();
+      });
+
+      document.body.appendChild(dialog);
+      credentialPreviewDialog = dialog;
+    }
+
+    const dialog = credentialPreviewDialog;
+    const image = dialog.querySelector(".credential-preview-image");
+    const title = dialog.querySelector(".credential-preview-title");
+    const link = dialog.querySelector(".credential-preview-link");
+
+    image.src = badge.image;
+    image.alt = badge.name;
+    title.textContent = badge.name;
+
+    if (badge.url) {
+      link.href = badge.url;
+      link.hidden = false;
+    } else {
+      link.removeAttribute("href");
+      link.hidden = true;
+    }
+
+    if (!dialog.open) dialog.showModal();
+  }
+
+
+  
+  function renderCredentialBadges() {
+    const showcase = document.getElementById("badge-showcase");
+    const stack = document.getElementById("badge-stack");
+    const count = document.getElementById("badge-count");
+
+    if (!showcase || !stack || !count) return;
+
+    const badges = credentialBadges.filter(badge => badge.image);
+
+    stack.replaceChildren();
+    showcase.classList.remove("is-animated", "is-settled");
+
+    count.textContent =
+      `${badges.length} credential${badges.length === 1 ? "" : "s"}`;
+
+    if (!badges.length) return;
+
+
+    const layoutBadges = () => {
+      const width = stack.clientWidth;
+      const height = stack.clientHeight;
+
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+      const radiusX = isMobile
+        ? Math.min(width * 0.29, 115)
+        : Math.min(width * 0.42, 200);
+
+      const radiusY = isMobile
+        ? Math.min(height * 0.27, 100)
+        : Math.min(height * 0.40, 200);
+      const total = badges.length;
+
+      stack.querySelectorAll(".credential-badge").forEach((element, i) => {
+        // Start at the top, then move anticlockwise.
+        const angle = (-90 - (i * 360 / total)) * Math.PI / 180;
+        const x = Math.cos(angle) * radiusX;
+        const y = Math.sin(angle) * radiusY - 50;
+        const rotation = ((i % 3) - 1) * 9;
+
+        element.style.setProperty("--x", `${x.toFixed(1)}px`);
+        element.style.setProperty("--y", `${y.toFixed(1)}px`);
+        element.style.setProperty("--rotation", `${rotation}deg`);
+        element.style.setProperty("--delay", `${i * 45}ms`);
+        element.style.setProperty("--layer", `${total - i}`);
+      });
+    };
+
+    badges.forEach(badge => {
+      const element = document.createElement("button");
+
+      element.type = "button";
+      element.className = "credential-badge";
+      element.setAttribute("aria-label", `Preview ${badge.name}`);
+      element.title = `Preview ${badge.name}`;
+
+      element.addEventListener("click", () => {
+        openCredentialPreview(badge);
+      });
+
+      const image = document.createElement("img");
+      image.src = badge.image;
+      image.alt = badge.name;
+      image.loading = "eager";
+      image.decoding = "async";
+      image.draggable = false;
+
+      element.appendChild(image);
+      stack.appendChild(element);
+    });
+
+    layoutBadges();
+
+    const elements = [...stack.querySelectorAll(".credential-badge")];
+
+
+    // Ensure the browser starts from the stacked, invisible state.
+    void stack.offsetHeight;
+
+    // Animate each badge directly, independently of CSS animation classes.
+    const animations = elements.map((element, i) => {
+      const x = element.style.getPropertyValue("--x");
+      const y = element.style.getPropertyValue("--y");
+      const rotation = element.style.getPropertyValue("--rotation");
+
+      return element.animate(
+        [
+          {
+            opacity: 0,
+            transform: "translate(-50%, -50%) scale(0.55)"
+          },
+          {
+            opacity: 1,
+            offset: 0.12,
+            transform: "translate(-50%, -50%) scale(0.72)"
+          },
+          {
+            opacity: 1,
+            transform:
+              `translate(calc(-50% + ${x}), calc(-50% + ${y})) ` +
+              `rotate(${rotation})`
+          }
+        ],
+        {
+          duration: 850,
+          delay: i * 45,
+          easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+          fill: "both"
+        }
+      );
+    });
+
+    // Once the burst finishes, let your existing CSS control the final layout.
+    Promise.all(animations.map(animation => animation.finished))
+      .then(() => {
+        showcase.classList.remove("is-animated");
+        showcase.classList.add("is-settled");
+
+        // The settled CSS now owns the final positions.
+        animations.forEach(animation => animation.cancel());
+      })
+      .catch(error => {
+        // Ignore cancelled animations; report unexpected failures.
+        if (error.name !== "AbortError") {
+          console.error("Credential badge animation failed:", error);
+        }
+      });
+
+    // Recalculate the final positions if the hero area changes size.
+    if (window.ResizeObserver) {
+      if (showcase._badgeResizeObserver) {
+        showcase._badgeResizeObserver.disconnect();
+      }
+
+      showcase._badgeResizeObserver = new ResizeObserver(() => {
+        layoutBadges();
+      });
+
+      showcase._badgeResizeObserver.observe(stack);
+    } else {
+      if (showcase._badgeResizeHandler) {
+        window.removeEventListener(
+          "resize",
+          showcase._badgeResizeHandler
+        );
+      }
+
+      showcase._badgeResizeHandler = layoutBadges;
+      window.addEventListener("resize", layoutBadges, { passive: true });
+    }
+  }
+
+
+
 
   // ------------------------------------------------------------------
   // Key metrics strip
